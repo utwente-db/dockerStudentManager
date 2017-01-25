@@ -43,13 +43,15 @@ function was used (Using Tools / Script Editor)
        return text;
     }
 
-Once the spreadsheet is created, two files have to be edited:
+Once the spreadsheet is created, it has to be marked as being shared: File / Share ... / Get shareable link / Done.
+Now two files have to be edited:
 
-* ``hosts``: this file contains all the hosts on which docker containers will run.
-* ``sync.sh``: this script that starts the docker containers by copying the spreadsheet 
-  and the script ``bin/manage_nb.py`` to all hosts and then executing the script.
+* ``servers``: this file contains all the servers on which docker containers will run.
+* ``bin/sync.sh``: this script that starts the docker containers by copying the spreadsheet 
+  and the script ``bin/manage_nb.py`` to all hosts and then executing the script. This file
+  first has to be copied from its template: ``cp bin/sync.sh.template bin/sync.sh``.
 
-If the script ``sync.sh`` is invoked it starts the containers on the hosts indicated in the mbd_server
+If the script ``sync.sh`` is invoked it starts the containers on the hosts indicated in the server
 field. 
 
 Once the containers are started, the users should be informed using

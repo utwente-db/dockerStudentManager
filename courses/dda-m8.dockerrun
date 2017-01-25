@@ -1,0 +1,12 @@
+docker 
+run 
+-di
+--user root  
+-p $port:8888
+-e PASSWORD=$Password
+-e NB_USER=jovyan
+-e NB_UID=$USERID
+-e GRANT_SUDO=yes
+-v $HOME:/home/jovyan/work
+--name $CONTAINERID
+$DOCKERIMAGE

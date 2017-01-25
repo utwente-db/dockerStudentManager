@@ -1,0 +1,14 @@
+docker 
+run 
+-di
+--user root  
+-p $port:8888
+-e PASSWORD=$Password
+-e STUDENT_ID=$SNumber
+-e NB_USER=datacamp
+-e NB_UID=$USERID
+-e GRANT_SUDO=yes
+-v $HOME:/home/datacamp/work
+-v $EXCHANGE:/srv/nbgrader/exchange
+--name $CONTAINERID
+$DOCKERIMAGE
